@@ -10,28 +10,28 @@ $(window).on('load', function () { // makes sure that whole site is loaded
 /* =========================================
                 Team
 ============================================ */
-$(function () {
-    $("#team-members").owlCarousel({
-        items: 2,
-        autoplay: true,
-        smartSpeed: 700,
-        loop: true,
-        autoplayHoverPause: true,
-        nav: true,
-        dots: false,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        responsive: {
-            // breakpoint from 0 up
-            0: {
-                items: 1
-            },
-            // breakpoint from 480 up
-            480: {
-                items: 2
-            }
-        }
-    });
-});
+// $(function () {
+//     $("#team-members").owlCarousel({
+//         items: 2,
+//         autoplay: true,
+//         smartSpeed: 700,
+//         loop: true,
+//         autoplayHoverPause: true,
+//         nav: true,
+//         dots: false,
+//         navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+//         responsive: {
+//             // breakpoint from 0 up
+//             0: {
+//                 items: 1
+//             },
+//             // breakpoint from 480 up
+//             480: {
+//                 items: 2
+//             }
+//         }
+//     });
+// });
 
 /* =========================================
                 Progress Bars
@@ -50,15 +50,17 @@ $(function () {
                 duration: 2000,
                 step: function (now, fx) {
                     // Check if the current width during animation exceeds 60%
-                    if (now > 60) {
+                    if (now > 50) {
                         $this.find("span").fadeIn();  // Show the span
+                        $this.find("span").addClass("active")
                     }
                 }
             });
 
             // Ensure span is hidden if initial width is <= 60%
-            if (targetWidth <= 60) {
+            if (targetWidth <= 50) {
                 $this.find("span").hide();
+
             }
 
         });
@@ -182,51 +184,7 @@ $(function () {
 });
 
 
-// /* =========================================
-//               Google Map
-// ============================================ */
-// $(window).on('load', function () {
 
-//     // Map Variables
-//     var addressString = '230 Broadway, NY, New York 10007, USA';
-//     var myLatlng = {
-//         lat: 40.712685,
-//         lng: -74.005920
-//     };
-
-//     // 1. Render Map
-//     var map = new google.maps.Map(document.getElementById('map'), {
-//         zoom: 11,
-//         center: myLatlng
-//     });
-
-//     // 2. Add Marker
-//     var marker = new google.maps.Marker({
-//         position: myLatlng,
-//         map: map,
-//         title: "Click To See Address"
-//     });
-
-//     // 3. Add Info Window
-//     var infowindow = new google.maps.InfoWindow({
-//         content: addressString
-//     });
-
-//     // Show info window when user clicks marker
-//     marker.addListener('click', function () {
-//         infowindow.open(map, marker);
-//     });
-
-//     // 4. Resize Function
-//     google.maps.event.addDomListener(window, 'resize', function () {
-
-//         var center = map.getCenter();
-//         google.maps.event.trigger(map, 'resize');
-//         map.setCenter(center);
-
-//     });
-
-// });
 
 
 /* =========================================
@@ -329,8 +287,14 @@ $(window).on('load', function () {
 
 
 // mail handling 
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    sendEmail(); // Call your sendEmail function
+});
 
 function sendEmail() {
+    
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var phone = document.getElementById('phone').value;
@@ -347,4 +311,147 @@ function sendEmail() {
         );
 
     window.location.href = mailtoLink;
+
+    toastr["success"]("Message Send Successfully!!", "Success")
+
 }
+
+toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-bottom-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
+
+//   <!-- Team Left Side -->
+//   <div class="col-md-6 col-sm-6 wow slideInLeft" data-wow-duration="1s">
+
+//       <div id="team-left">
+
+//           <div class="vertical-heading">
+//               <h5>Who We Are</h5>
+//               <h2>Meet Our<br><strong>Talented</strong> Team</h2>
+//           </div>
+//           <p>Our team at Cybelix is a powerhouse of creativity, expertise, and passion. We work together to deliver innovative digital solutions that drive your business forward.
+//           </p>
+
+//       </div>
+
+//   </div>
+
+//   <!-- Team Right Side -->
+//   <div class="col-md-6 col-sm-6 wow slideInRight" data-wow-duration="1s">
+
+//       <div id="team-members" class="owl-carousel owl-theme">
+
+//           <!-- Member 01 -->
+//           <div class="team-member">
+//               <img src="img/team/team-1.jpg" alt="team member" class="img-responsive">
+//               <div class="team-member-overlay">
+//                   <div class="team-member-info text-center">
+//                       <h6>Kevin Greer</h6>
+//                       <p>Web Designer</p>
+//                       <ul class="social-list">
+//                           <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+//                           <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+//                           <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+//                       </ul>
+//                   </div>
+//               </div>
+
+//           </div>
+//           <!-- Member 02 -->
+//           <div class="team-member">
+//               <img src="img/team/team-2.jpg" alt="team member" class="img-responsive">
+//               <div class="team-member-overlay">
+//                   <div class="team-member-info text-center">
+//                       <h6>Christian Cilinis</h6>
+//                       <p>Web Developer</p>
+//                       <ul class="social-list">
+//                           <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+//                           <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+//                           <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+//                       </ul>
+//                   </div>
+//               </div>
+
+//           </div>
+//           <!-- Member 03 -->
+//           <div class="team-member">
+//               <img src="img/team/team-3.jpg" alt="team member" class="img-responsive">
+//               <div class="team-member-overlay">
+//                   <div class="team-member-info text-center">
+//                       <h6>Andrea Arkov</h6>
+//                       <p>Senior Developer</p>
+//                       <ul class="social-list">
+//                           <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+//                           <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+//                           <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+//                       </ul>
+//                   </div>
+//               </div>
+
+//           </div>
+//           <!-- Member 04 -->
+//           <div class="team-member">
+//               <img src="img/team/team-4.jpg" alt="team member" class="img-responsive">
+//               <div class="team-member-overlay">
+//                   <div class="team-member-info text-center">
+//                       <h6>Harold Houdini</h6>
+//                       <p>Art Director</p>
+//                       <ul class="social-list">
+//                           <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+//                           <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+//                           <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+//                       </ul>
+//                   </div>
+//               </div>
+
+//           </div>
+//           <!-- Member 05 -->
+//           <div class="team-member">
+//               <img src="img/team/team-5.jpg" alt="team member" class="img-responsive">
+//               <div class="team-member-overlay">
+//                   <div class="team-member-info text-center">
+//                       <h6>Angela Perry</h6>
+//                       <p>Manager</p>
+//                       <ul class="social-list">
+//                           <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+//                           <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+//                           <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+//                       </ul>
+//                   </div>
+//               </div>
+
+//           </div>
+
+//           <!-- Member 06 -->
+//           <div class="team-member">
+//               <img src="img/team/team-6.jpg" alt="team member" class="img-responsive">
+//               <div class="team-member-overlay">
+//                   <div class="team-member-info text-center">
+//                       <h6>Kara Kulis</h6>
+//                       <p>Marketing & Sales</p>
+//                       <ul class="social-list">
+//                           <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+//                           <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+//                           <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+//                       </ul>
+//                   </div>
+//               </div>
+
+//           </div>
+
+//       </div>
