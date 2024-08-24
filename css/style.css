@@ -1371,6 +1371,10 @@ ul.navbar-nav>li>a:focus {
     -webkit-animation-delay: 1.5s;
     animation-delay: 1.5s;
 }
+#home-heading-3 {
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
 
 #home-text {
     -webkit-animation-delay: 2s;

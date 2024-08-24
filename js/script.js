@@ -41,10 +41,25 @@ $(function () {
     $("#progress-elements").waypoint(function () {
 
         $(".progress-bar").each(function () {
+            var $this = $(this);
+            var targetWidth = $this.attr("aria-valuenow");
+            
+            $this.animate({
+                width: targetWidth + "%"
+            }, {
+                duration: 2000,
+                step: function (now, fx) {
+                    // Check if the current width during animation exceeds 60%
+                    if (now > 60) {
+                        $this.find("span").fadeIn();  // Show the span
+                    }
+                }
+            });
 
-            $(this).animate({
-                width: $(this).attr("aria-valuenow") + "%"
-            }, 2000);
+            // Ensure span is hidden if initial width is <= 60%
+            if (targetWidth <= 60) {
+                $this.find("span").hide();
+            }
 
         });
 
@@ -304,6 +319,7 @@ $(window).on('load', function () {
 
     $("#home-heading-1").addClass("animated fadeInDown");
     $("#home-heading-2").addClass("animated fadeInLeft");
+    $("#home-heading-3").addClass("animated fadeInRight");
     $("#home-text").addClass("animated zoomIn");
     $("#home-btn").addClass("animated zoomIn");
     $("#arrow-down i").addClass("animated fadeInDown infinite");
