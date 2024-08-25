@@ -327,6 +327,11 @@
     .service h4 {
         font-size: 18px;
     }
+    .service:hover .icon {
+        color: #FF4136;
+        -webkit-transform: translatey(-20px);
+        transform: translateY(-20px);
+    }
     /* Services 02 */
     .r-tabs-accordion-title {
         text-align: center;

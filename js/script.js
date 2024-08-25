@@ -87,7 +87,9 @@ $(function () {
 ============================================ */
 $(window).on("load", function () {
   // Initialize Isotope
-  $("#isotope-container").isotope({});
+  $("#isotope-container").isotope({
+    filter: ".wordpress"
+  });
 
   // filter items on button click
   $("#isotope-filters").on("click", "button", function () {
@@ -286,7 +288,7 @@ function sendEmail() {
   
 
   emailjs
-    .sendForm("service_1uudioo", "template_ajgxo0w", "#contactForm")
+    .sendForm("service_qzwgxya", "template_0kv3ale", "#contactForm")
     .then(() => {
       toastr["success"]("Message Sent Successfully", "Success");
       document.getElementById('contactForm').reset();
