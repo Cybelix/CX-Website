@@ -590,6 +590,9 @@ ul.social-list li:nth-child(3) a:hover {
 #services-01 img {
     margin: 60px 0;
 }
+#services-01 .content-box-lg {
+    padding-bottom: 0;
+}
 
 .service {
     margin: 35px 0;
