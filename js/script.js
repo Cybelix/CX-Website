@@ -201,7 +201,7 @@ $(function () {
       $("nav").addClass("white-nav-top");
 
       // Show dark logo
-      $(".navbar-brand img").attr("src", "img/logo/logo-cybelix-black.png");
+      $(".navbar-brand img").attr("src", "img/logo/logo-cybelix-gray.png");
 
       // Show back to top button
       $("#back-to-top").fadeIn();
