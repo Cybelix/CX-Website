@@ -206,10 +206,10 @@
 
 @media (max-width : 800px) {
     .navbar-brand img {
-        top: 22px;
+        top: 36px;
     }
     .white-nav-top .navbar-brand img {
-        top: 3px;
+        top: 16px;
     }
     .content-box-lg {
         padding: 40px 0;

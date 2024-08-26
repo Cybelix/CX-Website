@@ -200,11 +200,17 @@ $(function () {
       // Show white nav
       $("nav").addClass("white-nav-top");
 
+      // Show dark logo
+      // $(".navbar-brand img").attr("src", "img/logo/logo-dark.png");
+
       // Show back to top button
       $("#back-to-top").fadeIn();
     } else {
       // Hide white nav
       $("nav").removeClass("white-nav-top");
+
+      // Show logo
+      $(".navbar-brand img").attr("src", "img/logo/logo-cybelix.png");
 
       // Hide back to top button
       $("#back-to-top").fadeOut();

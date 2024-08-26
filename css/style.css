@@ -659,6 +659,9 @@ ul.social-list li:nth-child(3) a:hover {
 .portfolio-item {
     overflow: hidden;
     position: relative;
+    border: 2px solid #D3D3D3;
+    border-radius: 10px;
+    margin: 5px;
 }
 .portfolio-item a {
     color:#FF4136
@@ -1053,12 +1056,15 @@ footer p span {
 
 .navbar-brand {
     padding: 13px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .navbar-brand img {
-    height: 50px;
+    height: 30px;
     position: fixed;
-    top: 30px;
+    top: 40px;
     display: inline-block;
     mix-blend-mode: multiply;
 }
@@ -1080,16 +1086,17 @@ ul.navbar-nav>li>a:focus {
 
 @media (max-width : 800px) {
     .navbar-brand img {
-        top: 22px;
+        height: 20px;
+        top: 40px;
     }
     .white-nav-top .navbar-brand img {
-        top: 3px;
+        top: 30px;
     }
 }
 
 /* White Navigation */
 .white-nav-top .navbar-brand img {
-    top: 5px;
+    top: 24px;
 }
 
 .white-nav-top {
