@@ -201,7 +201,7 @@ $(function () {
       $("nav").addClass("white-nav-top");
 
       // Show dark logo
-      $(".navbar-brand img").attr("src", "img/logo/logo-cybelix-black.png");
+      $(".navbar-brand img").attr("src", "img/logo/logo-cybelix-gray.png");
 
       // Show back to top button
       $("#back-to-top").fadeIn();
@@ -210,7 +210,7 @@ $(function () {
       $("nav").removeClass("white-nav-top");
 
       // Show logo
-      $(".navbar-brand img").attr("src", "img/logo/logo-cybelix.png");
+      $(".navbar-brand img").attr("src", "img/logo/logo-cybelix-gray.png");
 
       // Hide back to top button
       $("#back-to-top").fadeOut();
