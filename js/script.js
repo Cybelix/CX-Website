@@ -132,8 +132,8 @@ $(function () {
     nav: true,
     dots: false,
     navText: [
-      '<i class="fa fa-angle-left"></i>',
-      '<i class="fa fa-angle-right"></i>',
+      '<i class="fa fa-angle-left" id= "left-arrow"></i>',
+      '<i class="fa fa-angle-right " id = "right-arrow"></i>',
     ],
   });
 });

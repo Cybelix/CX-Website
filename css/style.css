@@ -858,6 +858,11 @@ ul.social-list li:nth-child(3) a:hover {
     margin: 0;
 }
 
+#left-arrow  , #right-arrow{
+    color: #fff;
+}
+
+
 
 
 /* =========================================
