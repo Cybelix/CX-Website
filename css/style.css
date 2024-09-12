@@ -659,7 +659,7 @@ ul.social-list li:nth-child(3) a:hover {
 }
 
 .portfolio-item {
-    display: block;
+    display: flex;
     overflow: hidden;
     position: relative;
     border: 2px solid #D3D3D3;
@@ -667,6 +667,8 @@ ul.social-list li:nth-child(3) a:hover {
     margin: 5px;
     background-color: #D3D3D3;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .portfolio-item a {
     color:#FF4136
@@ -709,7 +711,7 @@ ul.social-list li:nth-child(3) a:hover {
 
 
 .portfolio-item img {
-    width: 100%;
+    width: auto;
     height: auto;
     max-width: 100%;
     max-height: 410px;
